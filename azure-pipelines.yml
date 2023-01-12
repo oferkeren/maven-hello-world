@@ -8,7 +8,17 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 steps:
+- task: BuildVariableTask@2
+  displayName: Update the variable
+  inputs:
+    buildmode: 'Prime'
+    variable: 'count'
+    mode: 'Autoincrement'
+    usePSCore: False
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
 - task: Maven@3
   inputs:
     mavenPomFile: 'my-app/pom.xml'
