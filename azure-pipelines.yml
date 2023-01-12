@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
+environment: 'smarthotel-dev'
 steps:
 - task: Maven@3
   inputs:
