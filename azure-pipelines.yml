@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 variables:
-  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+  ismaster: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
 steps:
  task: BuildVariableTask@3
   inputs:
