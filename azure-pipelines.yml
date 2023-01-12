@@ -1,12 +1,4 @@
 # Maven
-- task: BuildVariableTask@3
-  inputs:
-    buildmode: 'Prime'
-    variable: 'count'
-    mode: 'Autoincrement'
-    usedefaultcreds: true
-    usePSCore: False
-    condition: and(succeeded(), eq(variables.isMain, 'true'))
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -19,6 +11,18 @@ pool:
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 steps:
+ task: BuildVariableTask@3
+  inputs:
+    buildmode: 'Prime'
+    variable: 'count'
+    mode: 'Autoincrement'
+    usedefaultcreds: true
+    usePSCore: False
+    condition: and(succeeded(), eq(variables.isMain, 'true'))
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
 - task: Maven@3
   inputs:
     mavenPomFile: 'my-app/pom.xml'
