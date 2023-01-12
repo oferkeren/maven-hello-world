@@ -7,16 +7,6 @@
   <version>1.0.0</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
-  <repository>
-  <id>demo-feed</id>
-  <url>https://devops-test-ofer.pkgs.visualstudio.com/e7af304b-cb74-4614-87a2-728903c04100/_packaging/demo-feed/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
   <properties>
       <!-- This property will be set by the Maven Dependency plugin -->
       <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
