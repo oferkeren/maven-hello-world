@@ -8,6 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+resources:'Corsica377'
 steps:
 - task: Maven@3
   inputs:
