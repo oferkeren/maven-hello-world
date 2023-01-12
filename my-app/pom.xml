@@ -36,6 +36,30 @@
         <version>1.9.4</version>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+  <id>maven-test</id>
+  <url>https://devops-test-ofer.pkgs.visualstudio.com/e7af304b-cb74-4614-87a2-728903c04100/_packaging/maven-test/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>	  
+  </repositories>
+<distributionManagement>
+   <repository>
+  <id>maven-test</id>
+  <url>https://devops-test-ofer.pkgs.visualstudio.com/e7af304b-cb74-4614-87a2-728903c04100/_packaging/maven-test/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>	  	
+</distributionManagement>	
   <build>
     <plugins>
       <plugin>
